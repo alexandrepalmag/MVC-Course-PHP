@@ -1,0 +1,15 @@
+{
+    "name": "acer/curso_mvc",
+    "authors": [
+        {
+            "name": "alexandrepalmag",
+            "email": "alepalmag85ti@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "app\\": "app"
+        }
+    }
+}
