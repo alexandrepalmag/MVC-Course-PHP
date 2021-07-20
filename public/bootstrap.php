@@ -13,4 +13,4 @@ use app\core\Myapp;
 
 $myapp = new MyApp(new AppExtract);
 $myapp->controller();
-$myApp->view();
+$myapp->view();

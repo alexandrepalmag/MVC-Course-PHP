@@ -2,7 +2,7 @@
 
 namespace app\interfaces;
 
-class ControllerInterface
+interface ControllerInterface
 {
 
     public function controller();

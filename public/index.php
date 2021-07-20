@@ -2,7 +2,6 @@
 
 require 'bootstrap.php';
 
-
 /* try { */
 
 /* } catch (Throwable $throw) {
