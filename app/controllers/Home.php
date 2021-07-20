@@ -12,8 +12,8 @@ class Home
     {
 
         $this->view = 'home.php';
-        /* $this->data = [
+        $this->data = [
             'title' => 'Home'
-        ]; */
+        ];
     }
 }
