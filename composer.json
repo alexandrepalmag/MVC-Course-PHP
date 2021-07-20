@@ -6,10 +6,16 @@
             "email": "alepalmag85ti@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "filp/whoops": "^2.14"
+    },
     "autoload": {
         "psr-4": {
             "app\\": "app"
-        }
+        },
+        "files": [
+            "app/helpers/exception.php",
+            "app/helpers/constants.php"
+        ]
     }
 }

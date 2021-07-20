@@ -5,15 +5,11 @@ namespace app\controllers;
 class Product
 {
 
-    public function index()
+    public function index(array $args)
     {
-
-        return 'Product index method';
     }
 
-    public function edit()
+    public function edit(array $args)
     {
-
-        return 'Product edit method';
     }
 }
