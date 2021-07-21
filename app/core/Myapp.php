@@ -9,6 +9,7 @@ class Myapp
 {
 
     private $controller;
+    private $controllerInterface;
 
     public function __construct(ControllerInterface $controllerInterface)
     {

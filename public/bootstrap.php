@@ -11,6 +11,6 @@ $whoops->register();
 use app\core\AppExtract;
 use app\core\Myapp;
 
-$myapp = new MyApp(new AppExtract);
-$myapp->controller();
-$myapp->view();
+$myApp = new MyApp(new AppExtract);
+$myApp->controller();
+$myApp->view();

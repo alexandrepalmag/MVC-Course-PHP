@@ -2,9 +2,9 @@
 
 require 'bootstrap.php';
 
-/* try { */
+/* try { 
 
-/* } catch (Throwable $throw) {
+ } catch (Throwable $throw) {
 
     formatException($throw);
 } */

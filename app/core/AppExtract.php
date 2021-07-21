@@ -16,7 +16,7 @@ class AppExtract implements ControllerInterface
     public function controller(): string
     {
 
-        $this->uri = explode('/', ltrim($_SERVER['REQUEST_URI'], '/'));
+        $this->uri = Uri::uri();
 
         if (isset($this->uri[0]) && $this->uri[0] !== '') {
 
@@ -26,6 +26,7 @@ class AppExtract implements ControllerInterface
         $namespaceAndController = 'app\\controllers\\' . $this->controller;
 
         if (class_exists($namespaceAndController)) {
+
             $this->controller = $namespaceAndController;
         }
 
