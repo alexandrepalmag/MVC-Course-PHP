@@ -3,64 +3,37 @@
 namespace app\core;
 
 use app\interfaces\ControllerInterface;
+use app\core\ControllerExtract;
 
 class AppExtract implements ControllerInterface
 {
 
-    private array $uri = [];
-    private string $method = 'index';
-    private string $controller = 'Home';
     private array $params = [];
-    private int $sliceIndexStartFrom = 2;
+    private int $sliceIndexStartFrom;
 
     public function controller(): string
     {
 
-        $this->uri = Uri::uri();
-
-        if (isset($this->uri[0]) && $this->uri[0] !== '') {
-
-            $this->controller = ucfirst($this->uri[0]);
-        }
-
-        $namespaceAndController = 'app\\controllers\\' . $this->controller;
-
-        if (class_exists($namespaceAndController)) {
-
-            $this->controller = $namespaceAndController;
-        }
-
-        return $this->controller;
+        return ControllerExtract::extract();
     }
 
-    public function method(): string
+    public function method($controller): string
     {
 
-        if (isset($this->uri[1])) {
+        [$method, $sliceIndexStartFrom] = MethodExtract::extract($controller);
+        $this->sliceIndexStartFrom = $sliceIndexStartFrom;
 
-            $this->method = strtolower($this->uri[1]);
-        }
-
-        if ($this->method === '') {
-
-            $this->method = 'index';
-        }
-
-        if (!method_exists($this->controller, $this->method)) {
-
-            $this->method = 'index';
-            $this->sliceIndexStartFrom = 1;
-        }
-
-        return $this->method;
+        return $method;
     }
 
     public function params(): array
     {
 
-        $countUri = count($this->uri);
+        $uri = Uri::uri();
 
-        $this->params = array_slice($this->uri, $this->sliceIndexStartFrom, $countUri);
+        $countUri = count($uri);
+
+        $this->params = array_slice($uri, $this->sliceIndexStartFrom, $countUri);
 
         return $this->params;
     }

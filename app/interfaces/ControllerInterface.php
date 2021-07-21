@@ -6,6 +6,6 @@ interface ControllerInterface
 {
 
     public function controller();
-    public function method();
+    public function method($controller);
     public function params();
 }
